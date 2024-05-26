@@ -27,6 +27,17 @@ def dfs_iterative(graph, start):
                     stack.append(neighbor)
 
 
+def dfs_v1(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    if start not in visited:
+        print(start)
+        visited.add(start)
+        for neighbour in graph[start]:
+            if neighbour not in visited:
+                dfs_v1(graph, neighbour, visited)
+
+
 # Example graph represented as an adjacency list
 graph = {
     'A': ['B', 'C'],
@@ -41,4 +52,4 @@ graph = {
 start_node = 'A'
 
 print("DFS Traversal:")
-dfs(graph, start_node)
+dfs_v1(graph, start_node)
