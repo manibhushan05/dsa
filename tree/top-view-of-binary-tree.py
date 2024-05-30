@@ -5,9 +5,8 @@
 #         self.left = left
 #         self.right = right
 from collections import deque
-from typing import Optional, List
 
-from tree.tree_helper import TreeNode, build_tree
+from tree.tree_helper import build_tree
 
 
 class Solution:
