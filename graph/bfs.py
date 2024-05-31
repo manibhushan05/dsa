@@ -2,19 +2,17 @@ from collections import deque
 
 
 def bfs(graph, start):
-    visited = set()  # Set to keep track of visited nodes
-    queue = deque([start])  # Initialize queue with the starting node
-
+    visited = set()
+    queue = deque([start])
     while queue:
-        node = queue.popleft()  # Dequeue a node from the queue
+        node = queue.popleft()
         if node not in visited:
-            visited.add(node)  # Mark the node as visited
-            print(node)  # Process the node (in this case, print it)
+            visited.add(node)
+            print(node)
+            for neighbour in graph[node]:
+                if neighbour not in visited:
+                    queue.append(neighbour)
 
-            # Enqueue all adjacent nodes of the dequeued node
-            for neighbor in graph[node]:
-                if neighbor not in visited:
-                    queue.append(neighbor)
 
 
 # Example graph represented as an adjacency list
