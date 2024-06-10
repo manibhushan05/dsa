@@ -26,6 +26,6 @@ class Solution:
             result.setdefault(col, []).append(val)
         return list(result.values())
 
-
+gl
 root = build_tree('[3,9,20,null,null,15,7]')
 print(Solution().verticalTraversal(root))
